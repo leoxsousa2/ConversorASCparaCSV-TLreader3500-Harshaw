@@ -1,2 +1,3 @@
 # ConversorASCparaCSV-TLreader3500-Harshaw
- depois
+
+Converter arquivo de dados do TL Reader UFS para formato compatível com OriginLab
