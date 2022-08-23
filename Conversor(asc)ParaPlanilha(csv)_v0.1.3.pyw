@@ -22,8 +22,8 @@ import wget
 import sys
 
 
-GitHub = 'https://github.com/leoxsousa2/Tutorial_GitHub/archive/refs/heads/main.zip' #Exemplo
-
+#GitHub = 'https://github.com/leoxsousa2/ConversorASCparaCSV-TLreader3500-Harshaw/archive/refs/heads/main.zip' #Exemplo
+GitHub = 'http://www.futurecrew.com/skaven/song_files/mp3/razorback.mp3' #Exemplo
 
 def Ativador_1(self):    #Selecionar Arquivo
     global CaminhodoArquivo   #Obs:Este comando faz com que a palavra "arquivo" seja visto pelo def Ativador_2(): e o resto do programa, ou seja, vira uma variável glogal.
@@ -42,7 +42,7 @@ def Ativador_1(self):    #Selecionar Arquivo
     Rows = str(rows)                    #Transformar para String
     Columns = str(columns)              #Transformar para String 
     print( ), print("Este arquivo .asc têm: Colunas = ", rows, " e Linhas = ", columns), print( )
-    tela_11.label_5.setText('Clique em enviar!')
+    tela_11.label_5.setText('Clique em Converter!')
     tela_11.label_6.setText('Este arquivo .asc tem: Colunas = ' +Rows+' e Linhas = '+Columns) 
     return 
 
@@ -76,18 +76,21 @@ def Ativador_Sobre():
 
 def Ativador_FecharFreme():
     tela_11.frame_1.close()
+    tela_11.progressBar_2.setValue(0)
     return
 
 def BarradeProgresso(current, total, width=80):  #Barra de progresso do atualizador
     "%d%% [%d / %d] bytes" % (current / total * 100, current, total)
     calculoPorcentagem = str(int(current / total * 100))
     totalMB = str(int(1/2))
+    #tela_11.label_7.setText('Baixando arquivo: ' + calculoPorcentagem + '%')
     #sys.stdout.write("\r" + '---->  ' + 'Baixando arquivo: ' + calculoPorcentagem + '%' + ' --> Total(MB): ' + f'{totalMB}' + ' Megabytes')
     #sys.stdout.flush()
-    tela_11.progressBar_2.setValue(0)
-    for i in range(101):
-        sleep(0.01)
-        tela_11.progressBar_2.setValue(i)
+
+    tela_11.progressBar_2.setValue(int(calculoPorcentagem))
+    #for i in range(101):
+    #    sleep(0.01)
+    #    tela_11.progressBar_2.setValue(i)
      
 
 
@@ -98,7 +101,7 @@ def Ativador_Atualizador():
     #Depois planejar automatização com arquivo python de subistituição de pastas e reinicialização do programa. Tudo automaticamente
     wget.download(GitHub, bar=BarradeProgresso) #Esse código vai chamar o def BarradeProgresso(current, total, width=80):
 
-
+#urllib.error.HTTPError: HTTP Error 404: Not Found
     return
 
 
@@ -142,8 +145,8 @@ app.exec()
 
 
 # Converter arquivo python para programa .exe ((abra o cmd e coloque este codigo))
-# pyinstaller Conversor(asc)ParaPlanilha(csv)_v0.1.3.py --onefile --noconsole
-# pyinstaller Conversor(asc)ParaPlanilha(csv)_v0.1.3.py --onefile
+# pyinstaller Conversor-asc-paraPlanilha-csv_v0.1.3.pyw --onefile --noconsole
+# pyinstaller Conversor-asc-paraPlanilha-csv_v0.1.3.pyw --onefile
 
 
 
