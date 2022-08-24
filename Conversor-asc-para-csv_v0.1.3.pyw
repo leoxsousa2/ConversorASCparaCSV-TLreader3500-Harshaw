@@ -22,8 +22,8 @@ import wget
 import sys
 
 
-#GitHub = 'https://github.com/leoxsousa2/ConversorASCparaCSV-TLreader3500-Harshaw/archive/refs/heads/main.zip' #Exemplo
-GitHub = 'http://www.futurecrew.com/skaven/song_files/mp3/razorback.mp3' #Exemplo
+GitHub = 'https://github.com/leoxsousa2/ConversorASCparaCSV-TLreader3500-Harshaw/archive/refs/heads/main.zip' #Exemplo
+#GitHub = 'http://www.futurecrew.com/skaven/song_files/mp3/razorback.mp3' #Exemplo
 
 def Ativador_1(self):    #Selecionar Arquivo
     global CaminhodoArquivo   #Obs:Este comando faz com que a palavra "arquivo" seja visto pelo def Ativador_2(): e o resto do programa, ou seja, vira uma variável glogal.
